@@ -166,6 +166,9 @@ namespace Nes3D.Engine3D
                 LinkToScripts();
             }
         }
+        
+        public bool castShadow = true;
+        public bool receiveShadow = true;
 
         public bool ContainsTag(string value)
         {
@@ -261,7 +264,10 @@ namespace Nes3D.Engine3D
             flip = pattern.flip;
             solid = pattern.solid;
             fullWarp = pattern.fullWarp;
-
+            
+            castShadow = pattern.castShadow;
+            receiveShadow = pattern.receiveShadow;
+            
             if (fromShape2Pattern)
             {
                 TagStr = pattern.TagStr;
@@ -307,6 +313,9 @@ namespace Nes3D.Engine3D
             solid = false;
             fullWarp = false;
 
+            castShadow = true;
+            receiveShadow = true;
+            
             tagStr = string.Empty;
             linkedScript = null;
             tags = null;
